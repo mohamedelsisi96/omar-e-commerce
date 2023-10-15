@@ -3,11 +3,15 @@ import {CartContext} from "../../Context/CartContext"
 import { Circles } from  'react-loader-spinner'
 import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrease ,delet} from '../Redux/CounterSlice'
 
 
 
 
 function Cart() {
+  let dispatch=useDispatch()
+ 
    let   {getLoggedUserCart,RemoveCartItem,UpdateProduct,ClearUserCart}=useContext(CartContext)
    let [cartDetailes,setCartDetailes]= useState(null)
    async function getCart(){
@@ -19,6 +23,7 @@ function Cart() {
   }
   async function DeletCart(id){
     let {data}= await RemoveCartItem(id)
+    
     console.log(data);
     setCartDetailes(data)
   }
@@ -27,6 +32,7 @@ function Cart() {
   
     let {data}= await ClearUserCart()
     console.log(data);
+    dispatch(delet())
     setCartDetailes(data)
     navigate('/home')
   }

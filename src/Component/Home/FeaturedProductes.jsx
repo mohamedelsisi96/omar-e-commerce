@@ -3,15 +3,22 @@ import React, { useContext } from 'react'
 import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast';
-import {CartContext} from "../../Context/CartContext"
+import {CartContext} from "../../Context/CartContext";
+import { useDispatch } from 'react-redux'
+import {  increase } from '../Redux/CounterSlice'
+
 
 export default function FeaturedProductes() {
+
+let dispatch=useDispatch()
+
     let { AddToCart ,AddToWishlist } = useContext(CartContext)
     async function AddProductToCart(id){
         let response=await AddToCart(id)
         console.log(response);
         if(response.data.status==="success"){
             toast.success("product added succesful to cart")
+            dispatch(increase())
         }else{
             toast.error("product failed added to cart")
         }
@@ -59,8 +66,8 @@ export default function FeaturedProductes() {
                 </Link>
                 </div>
                 <div className='d-flex justify-content-around align-items-center'>
-                <button onClick={()=>AddProductToCart(product.id)} className='btn bg-main text-white w-40 btn-sm '>add to cart</button>
-                <button onClick={()=>AddProductToWishlist(product.id)} className='btn bg-main text-white w-40 btn-sm '>add to wishlist</button>
+                <button onClick={()=>{AddProductToCart(product.id)}} className='btn bg-main text-white w-40 btn-sm '>add to cart</button>
+                <button onClick={()=>{AddProductToWishlist(product.id)}} className='btn bg-main text-white w-40 btn-sm '>add to wishlist</button>
                 </div>
             </div>
 

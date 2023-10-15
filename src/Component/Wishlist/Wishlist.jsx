@@ -29,19 +29,27 @@ function Wishlist() {
 }
 
 
-async function deleteProductWishlist(id){
-   let response= await  axios.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${id}`,{headers:headers})
-   .catch((err)=>console.log(err))
-   getProductWishlist()
-
+async function deleteProductWishlist(id) {
+  try {
+    await axios.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${id}`, {
+      headers: headers,
+    });
+    // After successful deletion, refetch the wishlist data
+    
+    await getProductWishlist();
+  
+  } catch (error) {
+    console.log(error);
   }
+}
 
-let{data}=useQuery("getProductWish",getProductWishlist,{
-  refetchOnMount:true,
-  staleTime:3000,
-  refetchInterval:100,
+
+let{data}=useQuery("getProductWish",getProductWishlist, {
+  refetchOnMount: true,
+  // staleTime: 3000,
+   refetchInterval: 100,
 })
-console.log(data?.data.data);
+// console.log(data?.data.data);
 
   return (
     <>

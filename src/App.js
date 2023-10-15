@@ -21,6 +21,7 @@ import Orders from './Component/Orders/Orders';
 import Logout from './Component/Logout/Logout';
 import Protected from './Component/Protected/Protected';
 
+ import { Provider } from 'react-redux'
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -28,6 +29,8 @@ import Address from './Component/Address/Address';
 import Verify from './Component/Verify/Verify';
 import Resetpassword from './Component/Resetpassword/Resetpassword';
 import Wishlist from './Component/Wishlist/Wishlist';
+import { store } from './Component/Redux/Store';
+
 
 
 function App() {
@@ -59,9 +62,13 @@ let routers=createHashRouter([
 ])
   return (
     <>
+    <Provider store={store}>
+
+
    <RouterProvider router={routers}>
     
-   </RouterProvider>
+   </RouterProvider >
+   </Provider>
     </>
   );
 }

@@ -2,7 +2,9 @@ import axios from "axios";
 import { createContext } from "react";
 
 
+
 export let CartContext = createContext()
+
 
 let headers={
     token:window.localStorage.getItem("token")

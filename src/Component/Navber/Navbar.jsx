@@ -3,6 +3,7 @@ import React,{ useContext } from 'react'
 import img1 from '../../Asstes/images/freshcart-logo.svg'
 import { Link } from 'react-router-dom'
 import {AuthContext} from '../../Context/AuthContext'
+import { useSelector } from 'react-redux'
 
 
 export default function Navbar() {
@@ -11,6 +12,8 @@ function logout(){
   setUserLogged(false)
   localStorage.removeItem('token')
 }
+
+let {counter}= useSelector((state)=>state.counter)
   return (
 <nav className="navbar navbar-expand-lg bg-light sticky-top mb-2 navbar-light ">
   <div className="container">
@@ -26,8 +29,13 @@ function logout(){
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/cart">Cart</Link>
+          <Link className="nav-link  " to="/cart">Cart 
+          <span class=" d-none badge mx-2 rounded-pill bg-danger">
+          {counter}
+          </span>
+          </Link>
         </li>
+      
         <li className="nav-item">
           <Link className="nav-link" to="/wishlist">Wish List</Link>
         </li>

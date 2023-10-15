@@ -104,3 +104,6 @@ a , a:hover{
 footer{
     margin-bottom: 0 !important;
 }
+.end{
+    right: -50% !important;
+}
