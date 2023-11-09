@@ -30,8 +30,8 @@ let {counter}= useSelector((state)=>state.counter)
         </li>
         <li className="nav-item">
           <Link className="nav-link  " to="/cart">Cart 
-          <span class=" d-none badge mx-2 rounded-pill bg-danger">
-          {counter}
+          <span class="  badge mx-2 rounded-pill bg-danger">
+          {window.localStorage.getItem('mycounter') }
           </span>
           </Link>
         </li>

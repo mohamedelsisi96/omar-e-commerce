@@ -6,10 +6,12 @@ import { Helmet } from 'react-helmet';
 import { Circles } from  'react-loader-spinner'
 import { CartContext } from '../../Context/CartContext';
 import { toast } from 'react-hot-toast';
-
+import { increase } from '../Redux/CounterSlice'
+import { useDispatch } from 'react-redux';
 
 
 function Wishlist() {
+  let dispatch=useDispatch()
     let headers={
         token:window.localStorage.getItem("token")
     }
@@ -22,6 +24,9 @@ function Wishlist() {
       }else{
           toast.error("product failed added to cart")
       }
+      dispatch(increase(
+
+      ))
    }
  function getProductWishlist(){
   return  axios.get('https://ecommerce.routemisr.com/api/v1/wishlist',{headers:headers})

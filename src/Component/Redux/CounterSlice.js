@@ -9,14 +9,18 @@ let counterSlice=createSlice({
     increase:(state)=>{
       
         state.counter +=1
+        localStorage.setItem('mycounter', state.counter);
     },
     decrease:(state)=>{
       
         state.counter -=1
+        localStorage.setItem('mycounter', state.counter);
+        
     },
     delet:(state)=>{
-        console.log("decrease");
+       
         state.counter =0
+        localStorage.setItem('mycounter', state.counter);
     },
     }
 })

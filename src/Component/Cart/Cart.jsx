@@ -4,7 +4,7 @@ import { Circles } from  'react-loader-spinner'
 import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrease ,delet} from '../Redux/CounterSlice'
+import { increase , decrease ,delet} from '../Redux/CounterSlice'
 
 
 
@@ -26,6 +26,7 @@ function Cart() {
     
     console.log(data);
     setCartDetailes(data)
+    dispatch(decrease())
   }
   let navigate=useNavigate()
   async function DeletCartUser(){
