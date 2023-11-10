@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/omar-e-commerce/static/css/main.97ba19d0.css",
-    "main.js": "/omar-e-commerce/static/js/main.92fd6139.js",
+    "main.css": "/omar-e-commerce/static/css/main.eab4ad35.css",
+    "main.js": "/omar-e-commerce/static/js/main.2154f7fc.js",
     "static/js/787.28cb0dcd.chunk.js": "/omar-e-commerce/static/js/787.28cb0dcd.chunk.js",
     "static/media/blog-img-2.jpeg": "/omar-e-commerce/static/media/blog-img-2.69e5e73301d9616ba8c6.jpeg",
     "static/media/blog-img-1.jpeg": "/omar-e-commerce/static/media/blog-img-1.3e2f37267e1d1d5c8c75.jpeg",
@@ -24,12 +24,12 @@
     "static/media/slick.ttf": "/omar-e-commerce/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/omar-e-commerce/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/omar-e-commerce/index.html",
-    "main.97ba19d0.css.map": "/omar-e-commerce/static/css/main.97ba19d0.css.map",
-    "main.92fd6139.js.map": "/omar-e-commerce/static/js/main.92fd6139.js.map",
+    "main.eab4ad35.css.map": "/omar-e-commerce/static/css/main.eab4ad35.css.map",
+    "main.2154f7fc.js.map": "/omar-e-commerce/static/js/main.2154f7fc.js.map",
     "787.28cb0dcd.chunk.js.map": "/omar-e-commerce/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.97ba19d0.css",
-    "static/js/main.92fd6139.js"
+    "static/css/main.eab4ad35.css",
+    "static/js/main.2154f7fc.js"
   ]
 }
